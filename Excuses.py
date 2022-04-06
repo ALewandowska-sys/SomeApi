@@ -2,11 +2,11 @@ import requests
 import json
 
 print("Are you tired of thinking about a new excuse? We can help you!")
-categories = input("Choose for who you need a random exuce (office/family/children/college/party): ")
+categories = input("Where you don't want to go? (office/family/children/college/party): ")
 
-howMany = input("Only one excuse you need? (no/number): ")
+howMany = input("How many excuses you need? (number): ")
 
-if howMany == 'no':
+if howMany == '1':
   response = requests.get(f'https://excuser.herokuapp.com/v1/excuse/{categories}')
 else:
   response = requests.get(f'https://excuser.herokuapp.com/v1/excuse/{categories}/{howMany}')
